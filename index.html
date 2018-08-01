@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <title>1 Hour Prototest</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        canvas {
+            width: 100%;
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+    <script src="js/three.min.js"></script>
+    <script src="js/victor.min.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/starship.js"></script>
+    <script>
+
+        var eng = new GameEngine(null);
+        eng.init();
+
+        eng.animate();
+
+        var ss = new Starship({ 
+            target: new Victor(10,10), 
+            velocity: 30,
+            tforce: 5
+        });
+        eng.add(ss);
+
+        var s1 = new Starship({ 
+            target: new Victor(-10,10), 
+            velocity: 50,
+            tforce: 10
+        });
+        eng.add(s1);
+
+        var s2 = new Starship({ 
+            target: new Victor(10,-10), 
+            velocity: 80,
+            tforce: 25
+        });
+        eng.add(s2);
+    </script>
+</body>
+</html>
