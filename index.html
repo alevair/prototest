@@ -1,0 +1,114 @@
+﻿<html>
+<head>
+    <title>Three JS DEMO FOR R/GA</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        canvas {
+            width: 100%;
+            height: 100%
+        }
+    </style>
+</head>
+<body id="principal">
+
+    <div style="position:absolute; left:10px; top:10px; color:#ffffff">Three JS DEMO FOR R/GA</div>
+    <a href="https://github.com/alevair/prototest" style="position:absolute; left:10px; top:30px; color:#f0f0f0">https://github.com/alevair/prototest</a>
+    <div style="position:absolute; left:10px; top:60px; color:#ffffff">CURSOR LEFT / RIGHT TO MOVE - SPACE TO SHOOT</div>
+    <input id="restart" type="button" value ="Reiniciar" style="position:absolute; left:10px; top:90px; "/>
+
+    <script src="libs/three.min.js"></script>
+    <script src="libs/victor.min.js"></script>
+    <script src="libs/math_helper.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/mainship.js"></script>
+    <script src="js/enemy_movement_enum.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/laser.js"></script>
+    <script src="js/rubbish.js"></script>
+    <script>
+
+        var app = { };
+        app.engine = new GameEngine(null);
+        app.scene = new Scene(null);
+
+        app.engine.init(function() {
+            app.engine.update();
+
+            addMainship();
+
+            for(var l1=0; l1<8; l1++) {
+                addEnemy("red");    
+            }
+            for(var l1=0; l1<8; l1++) {
+                addEnemy("yellow");    
+            }
+            for(var l1=0; l1<8; l1++) {
+                addEnemy("green");    
+            }
+            for(var l1=0; l1<8; l1++) {
+                addEnemy("magenta");    
+            }                
+        });
+
+
+        function addEnemy(name) {
+            var enemy = new Enemy({ 
+                name: name,
+                position: randomVictor(-10, 20),
+                target: new Victor(10,10), 
+                impulse: randomNumber(10, 20),
+                tforce: randomNumber(4, 10)
+            });
+            enemy.build(function(source) {
+                app.scene.addEnemy(source);
+            });
+        }
+
+        function addMainship() {
+            var mainship = new Mainship({ 
+                name: "mainship",
+                position: new Victor(0,-7)
+            });
+            mainship.build(function(source) {
+                app.scene.addMainship(source);
+            });
+
+        }        
+
+        var Key = {
+            _pressed: {},
+
+            LEFT: 37,
+            UP: 38,
+            RIGHT: 39,
+            DOWN: 40,
+            SPACE: 32,
+            F1: 112,
+  
+            isDown: function(keyCode) {
+                return this._pressed[keyCode];
+            },
+  
+            onKeydown: function(event) {
+                this._pressed[event.keyCode] = true;
+            },
+  
+            onKeyup: function(event) {
+                delete this._pressed[event.keyCode];
+            }
+        };
+
+        window.addEventListener('keyup', function(event) { Key.onKeyup(event); }, false);
+        window.addEventListener('keydown', function(event) { Key.onKeydown(event); }, false);
+
+        document.getElementById("restart").addEventListener("click", function(event) {
+            location.reload();
+        }, false);
+
+
+    </script>
+</body>
+</html>

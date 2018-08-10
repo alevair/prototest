@@ -1,0 +1,100 @@
+{
+    "enemies": [
+        {
+            "name":"green",
+            "texture":"img/alieng128w.png",
+            "flare":"img/alieng256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color": "#00ff00"
+        },
+        {
+            "name":"yellow",
+            "texture":"img/alieny128w.png",
+            "flare":"img/alieny256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ffff00"
+        },
+        {
+            "name":"red",
+            "texture":"img/alienr128w.png",
+            "flare":"img/alienr256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ff0000"
+        },
+        {
+            "name":"magenta",
+            "texture":"img/alienm128w.png",
+            "flare":"img/alienm256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ff00ff"
+        },        
+        {
+            "name":"bomba",
+            "texture":"img/bomb32x64.png",
+            "flare":"img/bomb64x128f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ff0000"
+        }
+    ],
+    "lasers":[
+        {
+            "name":"bomb",
+            "texture":"img/alieng128w.png",
+            "flare":"img/alieng256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ff00ff"
+        },
+        {
+            "name":"laser",
+            "texture":"img/laser64.png",
+            "flare":"img/laser128f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#0000ff"
+        }
+    ],
+    "mainships": [
+        {
+            "name":"mainship",
+            "texture":"img/mainship128.png",
+            "flare":"img/mainship256f.png",
+            "scale": {
+                "x": 1,
+                "y": 1 
+            },
+            "color":"#ffffff"
+        }
+    ],
+    "debris":[
+        {
+            "name":"enemy",
+            "texture":"img/debris16.png",
+            "flare":"img/debris64f.png",
+            "scale": {
+                "x": 0.3,
+                "y": 0.3 
+            },
+            "color":"#ffff00"
+        }
+    ]
+}
