@@ -10,6 +10,15 @@
             "request": "launch",
             "reAttach": true,
             "file": "${workspaceFolder}/index.html"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Lanzar Chrome contra localhost",
+            "file": "${workspaceFolder}/index.html"
+>>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
         }
     ]
 }
