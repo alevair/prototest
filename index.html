@@ -1,10 +1,6 @@
 ﻿<html>
 <head>
-<<<<<<< HEAD
     <title>Three JS DEMO FOR R/GA</title>
-=======
-    <title>1 Hour Prototest</title>
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
     <style>
         body {
             margin: auto;
@@ -15,7 +11,6 @@
         }
     </style>
 </head>
-<<<<<<< HEAD
 <body id="principal">
 
     <div style="position:absolute; left:10px; top:10px; color:#ffffff">Three JS DEMO FOR R/GA</div>
@@ -117,40 +112,3 @@
     </script>
 </body>
 </html>
-=======
-<body>
-    <script src="js/three.min.js"></script>
-    <script src="js/victor.min.js"></script>
-    <script src="js/engine.js"></script>
-    <script src="js/starship.js"></script>
-    <script>
-
-        var eng = new GameEngine(null);
-        eng.init();
-
-        eng.animate();
-
-        var ss = new Starship({ 
-            target: new Victor(10,10), 
-            velocity: 30,
-            tforce: 5
-        });
-        eng.add(ss);
-
-        var s1 = new Starship({ 
-            target: new Victor(-10,10), 
-            velocity: 50,
-            tforce: 10
-        });
-        eng.add(s1);
-
-        var s2 = new Starship({ 
-            target: new Victor(10,-10), 
-            velocity: 80,
-            tforce: 25
-        });
-        eng.add(s2);
-    </script>
-</body>
-</html>
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa

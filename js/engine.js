@@ -3,39 +3,25 @@
 function GameEngine(parameters) {
 
     var self = this;
-<<<<<<< HEAD
     this.params = parameters;
     this.textures = [];
     this.entities = [];
-=======
-    this.parameters = parameters;
-    this.elements = [];
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
 
     // Elapsed time betwheen frames
     this.elapsed = 0;
     this.prevtime = 0;
 
-<<<<<<< HEAD
     this.init = function(fdone) {
-=======
-    this.init = function() {
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 1, 500 );
 
-<<<<<<< HEAD
         this.camera.position.set(0, 0, 20);
-=======
-        this.camera.position.set(0, 0, 50);
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( this.renderer.domElement );
-<<<<<<< HEAD
 
         this.loadEntities(function() {
             fdone();
@@ -170,28 +156,5 @@ function GameEngine(parameters) {
                 ferr(err);
             });
 
-=======
-    }
-
-    this.animate = function() {
-        var current_time = new Date();
-        self.elapsed = 1 / (current_time - self.prevtime);
-
-        requestAnimationFrame(self.animate );
-    
-        // Animate the game elements
-        for(var l1=0; l1<self.elements.length; l1++) {
-            var elem = self.elements[l1];
-            elem.update(self.elapsed);
-        }
-
-        self.renderer.render( self.scene, self.camera );
-        self.prevtime = current_time;
-    }
-
-    this.add = function(gameElement) {
-        self.scene.add(gameElement.geom);
-        self.elements.push(gameElement);
->>>>>>> a20ffd50cf6107683ea344c3ca699f23cefbbffa
     }
 }
